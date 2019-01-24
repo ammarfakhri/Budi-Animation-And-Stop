@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stop</title>
+		<script src="jquery-3.3.1.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#klik1").click(function(){
+				$("#budi1").css({"display":"none"});
+				$("#budi3").css({"display":"none"});
+				$("#budi2").css({"display":"inline-block"});
+				$("#budi2").animate({left: '1000px'}, 6500);
+				$("#budi1").animate({left: '1000px'}, 6500);
+				$("#budi3").animate({left: '1000px'}, 6500);
+			});
+			$("#klik2").click(function(){
+				$("#budi1").css({"display":"inline-block"});
+				alert("Budi: Kenapa Berhenti :( ?");
+				$("#budi2").stop();
+				$("#budi1").stop();
+				$("#budi3").stop();
+				$("#budi2").css({"display":"none"});
+				$("#budi3").css({"display":"none"});
+			});
+			$("#klik3").click(function(){
+				$("#budi3").css({"display":"inline-block"});
+				alert("Budi: Aku akan latihan dulu!");
+				$("#budi2").stop();
+				$("#budi1").stop();
+				$("#budi3").stop();
+				$("#budi2").css({"display":"none"});
+				$("#budi1").css({"display":"none"});
+			});
+		});
+		</script>
+		<style>
+		#background {
+			background-image: url(gambar/back.png);
+			background-repeat: repeat-x;
+			background-attachment: fixed;
+		}
+		
+		</style>
+	<body id="background">
+	<div class="gambar">
+	<button id="klik1" style="font-size: 20px; background-color: green; color: white;">Move</button>
+	<button id="klik3" style="font-size: 20px; background-color: yellow; color: gray;">FIGTH!!</button>
+	<button id="klik2" style="font-size: 20px; background-color: red; color: white;">Stop</button>
+		<img id="budi1" src="gambar/idle.png" style="position: absolute; left: 1px; top: 225px;">
+		<img id="budi2" src="gambar/walk.gif" style="position: absolute; display: none; left: 1px; top: 225px;">
+		<img id="budi3" src="gambar/fight.gif" style="position: absolute; display: none; left: 1px; top: 225px;">
+	</div>
+	</body>
+</html>
